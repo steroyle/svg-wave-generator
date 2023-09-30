@@ -7,6 +7,7 @@ function App() {
   const [optionsData, setOptionsData] = useState({
     width: 1000,
     height: 400,
+    fill: '#2563EB',
   });
 
   const fieldChangeHandler = (fieldName, value) => {
@@ -18,13 +19,16 @@ function App() {
 
   return (
     <>
-      <h1>SVG Wave Generator</h1>
+      <h1 className="text-5xl font-bold tracking-tight text-slate-950">SVG Wave Generator</h1>
       <div className="card">
         <SvgOptions
           optionsData={optionsData}
           onFieldChange={fieldChangeHandler}
         />
-        <SvgRender optionsData={optionsData} />
+        <div className='flex'>
+          <SvgRender optionsData={optionsData} />
+          {/* <SvgRender optionsData={optionsData} /> */}
+        </div>
       </div>
     </>
   )
